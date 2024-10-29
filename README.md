@@ -57,6 +57,37 @@ $ pnpm run test:e2e
 # test coverage
 $ pnpm run test:cov
 ```
+## ENPOINT
+
+Endpoints de Admin
+
+GET /admin – Obtener todos los administradores
+GET /admin/:id – Obtener un administrador por ID
+POST /admin – Crear un nuevo administrador
+PUT /admin/:id – Actualizar un administrador
+DELETE /admin/:id – Eliminar un administrador
+
+Bebida
+
+GET /bebidas – Obtener todas las bebidas
+GET /bebidas/:id – Obtener bebida por ID
+POST /bebidas – Crear nueva bebida
+PUT /bebidas/:id – Actualizar bebida
+
+Pedido
+
+GET /pedidos – Obtener todos los pedidos
+GET /pedidos/:id – Obtener pedido por ID
+POST /pedidos – Crear nuevo pedido
+PUT /pedidos/:id – Actualizar pedido
+
+Venta
+
+GET /ventas – Obtener todas las ventas
+GET /ventas/:id – Obtener venta por ID
+POST /ventas – Registrar nueva venta
+PUT /ventas/:id – Actualizar venta
+
 
 ## Resources
 
