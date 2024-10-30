@@ -10,6 +10,9 @@ export class Bebida {
   nombre: string;
 
   @Column()
+  imagen: string;
+
+  @Column()
   tipo: string;
 
   @Column()

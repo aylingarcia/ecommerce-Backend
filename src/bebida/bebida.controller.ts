@@ -18,8 +18,12 @@ export class BebidaController {
   }
 
   @Post()
-  create(@Body() bebida: Bebida) {
-    return this.bebidaService.create(bebida);
+  async create(@Body() bebida: Bebida) {
+    try {
+      return await this.bebidaService.create(bebida);
+    } catch (error) {
+      console.error('Error al crear la bebida:', error);
+    }
   }
 
   @Put(':id')

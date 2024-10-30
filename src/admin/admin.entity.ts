@@ -7,11 +7,11 @@ export class Admin {
   id: number;
 
   @Column()
-  nombre: string;
+  name: string;
 
   @Column()
   email: string;
 
   @Column()
-  contraseña: string;
+  password: string;
 }

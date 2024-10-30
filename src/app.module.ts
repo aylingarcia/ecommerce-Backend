@@ -40,6 +40,7 @@ import { VentaModule } from './venta/venta.module';
         Inventario,
       ],
       synchronize: true, // Desactivar en producción
+      dropSchema: true,
     }),
 
     // Módulos de las entidades
