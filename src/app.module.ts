@@ -4,19 +4,17 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 
 // Importar entidades
-import { Admin } from './admin/admin.entity';
-import { Bebida } from './bebida/bebida.entity';
-import { Pedido } from './pedido/pedido.entity';
-import { DetallePedido } from './detalle-pedido/detalle-pedido.entity';
-import { Venta } from './venta/venta.entity';
-import { Distribucion } from './distribucion/distribucion.entity';
-import { Inventario } from './inventario/inventario.entity';
+import { User } from './user/user.entity';
+import { Product } from './product/product.entity';
+import { Sale } from './sale/sale.entity';
+import { Invoice } from './invoice/invoice.entity';
 
 // Importar módulos
-import { AdminModule } from './admin/admin.module';
-import { BebidaModule } from './bebida/bebida.module';
-import { PedidoModule } from './pedido/pedido.module';
-import { VentaModule } from './venta/venta.module';
+
+import { UserModule } from './user/user.module';
+import { ProductModule } from './product/product.module';
+import { SaleModule } from './sale/sale.module';
+import { InvoiceModule } from './invoice/bill.module';
 
 @Module({
   imports: [
@@ -30,33 +28,18 @@ import { VentaModule } from './venta/venta.module';
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
-      entities: [
-        Admin,
-        Bebida,
-        Pedido,
-        DetallePedido,
-        Venta,
-        Distribucion,
-        Inventario,
-      ],
+      entities: [User, Product, Sale, Invoice],
       synchronize: true, // Desactivar en producción
       dropSchema: true,
     }),
 
     // Módulos de las entidades
-    TypeOrmModule.forFeature([
-      Admin,
-      Bebida,
-      Pedido,
-      DetallePedido,
-      Venta,
-      Distribucion,
-      Inventario,
-    ]),
-    AdminModule,
-    BebidaModule,
-    PedidoModule,
-    VentaModule,
+    TypeOrmModule.forFeature([User, Product, Sale, Invoice]),
+
+    UserModule,
+    ProductModule,
+    SaleModule,
+    InvoiceModule,
   ],
 })
 export class AppModule {}
