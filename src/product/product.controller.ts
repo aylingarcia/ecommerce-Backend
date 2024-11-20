@@ -32,6 +32,7 @@ export class ProductController {
     @Body()
     productData: {
       nameProduct: string;
+      image: string;
       brand: string;
       amount: number;
       expiration_date: Date;
