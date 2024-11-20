@@ -4,8 +4,8 @@ import {
   Delete,
   Get,
   Param,
-  Patch,
   Post,
+  Put,
 } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { Product, ProductType } from './product.entity';
@@ -44,7 +44,7 @@ export class ProductController {
   }
 
   // Actualizar un producto
-  @Patch(':id')
+  @Put(':id')
   async update(
     @Param('id') id: number,
     @Body() productData: Partial<Product>,
