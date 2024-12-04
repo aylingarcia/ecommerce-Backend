@@ -29,7 +29,7 @@ import { InvoiceModule } from './invoice/bill.module';
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
       entities: [User, Product, Sale, Invoice],
-      synchronize: false, // Desactivar en producción para que no haya cambio de la bd en entity
+      synchronize: process.env.NODE_ENV !== 'production', // Solo sincroniza en desarrollo
       dropSchema: false, //para que no se borre los datos hay que ponerlo en fale
     }),
 
