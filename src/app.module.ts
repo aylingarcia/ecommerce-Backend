@@ -29,8 +29,8 @@ import { InvoiceModule } from './invoice/bill.module';
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
       entities: [User, Product, Sale, Invoice],
-      synchronize: true, // Desactivar en producción para que no haya cambio de la bd en entity
-      dropSchema: true, //para que no se borre los datos hay que ponerlo en fale
+      synchronize: false, // Desactivar en producción para que no haya cambio de la bd en entity
+      dropSchema: false, //para que no se borre los datos hay que ponerlo en fale
     }),
 
     // Módulos de las entidades
