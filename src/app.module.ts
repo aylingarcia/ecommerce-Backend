@@ -31,6 +31,7 @@ import { InvoiceModule } from './invoice/bill.module';
       entities: [User, Product, Sale, Invoice],
       synchronize: process.env.NODE_ENV !== 'production', // Solo sincroniza en desarrollo
       dropSchema: false, //para que no se borre los datos hay que ponerlo en fale
+     logging: true, // Habilita logs de la base de datos
     }),
 
     // Módulos de las entidades
